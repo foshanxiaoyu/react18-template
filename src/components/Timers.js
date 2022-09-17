@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from "react";
 
+
 export const Tt = () => {
   const [seconds, setSeconds] = useState(0);
+  
 
+function handleClick() {
+   console.log("click one");
+    setSeconds(secodes => secodes = 0);
+  };
+  
   useEffect(() => {
     const interval = setInterval(
       () => setSeconds((seconds) => seconds + 1),
       1000
     );
     return () => clearInterval(interval);
-  }, []);
-  return <h1>Seconds: {seconds}</h1>;
+ }, []);
+ 
+ 
+  return (<>
+  <h1>Seconds: {seconds}</h1>
+  <button onClick={handleClick} >ReSet</button>
+  {/*  */}
+  </>);
+
 };
 // export class Timers extends Component {
 
